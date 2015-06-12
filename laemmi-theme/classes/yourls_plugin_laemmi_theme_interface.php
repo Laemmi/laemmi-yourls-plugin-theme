@@ -1,14 +1,5 @@
 <?php
 /*
-Plugin Name: laemmi´s theme
-Plugin URI: https://github.com/Laemmi/yourls-plugin-laemmi-theme
-Description: Nice theme
-Version: 1.0
-Author: Michael Lämmlein
-Author URI: https://github.com/Laemmi
-Copyright 2015 laemmi
-*/
-/*
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
  * to deal in the Software without restriction, including without limitation
@@ -28,7 +19,7 @@ Copyright 2015 laemmi
  * IN THE SOFTWARE.
  *
  * @category  laemmi-theme-yourls
- * @package   plugin.php
+ * @package   classes/yourls_plugin_laemmi_theme_interface.php
  * @author    Michael Lämmlein <ml@spacerabbit.de>
  * @copyright ©2015 laemmi
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
@@ -36,10 +27,18 @@ Copyright 2015 laemmi
  * @since     12.06.15
 */
 
-// No direct call
-if(!defined('YOURLS_ABSPATH'))die();
+/**
+ * Interface yourls_plugin_laemmi_theme_interface
+ */
+interface yourls_plugin_laemmi_theme_interface
+{
+    public function pre_html_logo();
 
-require_once 'classes/yourls_plugin_laemmi_theme.php';
-require_once 'classes/yourls_plugin_laemmi_theme_plugin.php';
+    public function html_logo();
 
-new yourls_plugin_laemmi_theme_plugin(new yourls_plugin_laemmi_theme());
+    public function html_head();
+
+    public function html_footer_text($value);
+
+    public function html_title($title, $context);
+}
