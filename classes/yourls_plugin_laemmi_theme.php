@@ -41,7 +41,7 @@ class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
 
     public function __construct()
     {
-        $this->plugin_path = YOURLS_PLUGINDIR . '/laemmi-theme';
+        $this->plugin_path = YOURLS_PLUGINDIR . '/laemmi-yourls-plugin-theme';
     }
 
     /**

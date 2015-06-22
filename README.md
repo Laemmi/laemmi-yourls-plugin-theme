@@ -1,8 +1,8 @@
-# yourls plugin laemmi-theme
+# Yourls Plugins (www.yourls.org)
 Nice theme for yourls as plugin
 
 ## Installation
-- copy laemmi-theme folder to usr/plugins
+- copy laemmi-yourls-plugin-theme folder to usr/plugins
 - activate plugin in user interface
 - add following constants to usr/config.php
   - define('LAEMMI_THEME_PAGE_NAME', 'My name');
