@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -18,151 +19,171 @@
  * IN THE SOFTWARE.
  *
  * @category  yourls-laemmi-theme
- * @package   style.css
+ * @package   style.scss
  * @author    Michael Lämmlein <ml@spacerabbit.de>
  * @copyright ©2015 laemmi
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
  * @version   1.0
  * @since     12.06.15
 */
+/* line 28, sass/style.scss */
 body {
-    background-color: #d6d9dc;
-    font-size: 14px;
+  background-color: #d6d9dc;
+  font-size: 14px;
 }
 
+/* line 33, sass/style.scss */
 div, p, td {
-    font-family: Verdana, Arial;
-    font-size: 1em;
+  font-family: Verdana, Arial;
+  font-size: 1em;
 }
 
+/* line 38, sass/style.scss */
 h1 {
-    height: auto;
-    margin: 0;
-    float: none;
-    max-width: 0;
+  height: auto;
+  margin: 0;
+  float: none;
+  max-width: 0;
 }
 
+/* line 45, sass/style.scss */
 ul li {
-	margin-bottom: 3px;
+  margin-bottom: 3px;
 }
 
+/* line 49, sass/style.scss */
 #wrap {
-    border: none;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    border-radius: 0;
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 
+/* line 56, sass/style.scss */
 #footer {
-    margin: 5px auto 0 auto;
-    max-width: 950px;
-    background: white;
-    padding: 5px 20px;
+  margin: 5px auto 0 auto;
+  max-width: 950px;
+  background: white;
+  padding: 5px 20px;
 }
-
+/* line 62, sass/style.scss */
 #footer p {
-    text-align: right;
-    padding:0;
-    background: white;
-    margin:0;
-    max-width: 950px;
-    -moz-border-radius: 0;
-    -webkit-border-radius: 0;
-    border-radius: 0;
-    border: none;
-    -moz-border-radius-bottomleft: 0;
-    -moz-border-radius-bottomright: 0;
-    -webkit-border-bottom-left-radius: 0;
-    -webkit-border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+  text-align: right;
+  padding: 0;
+  background: white;
+  margin: 0;
+  max-width: 950px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  border: none;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
-
+/* line 79, sass/style.scss */
 #footer p a {
-	background: transparent;
-    color: #666;
+  background: transparent;
+  color: #666;
 }
 
+/* line 86, sass/style.scss */
 ul#admin_menu {
-	text-align: right;
-	min-height: 0;
+  text-align: right;
+  min-height: 0;
 }
-
+/* line 90, sass/style.scss */
 ul#admin_menu li {
-	display: inline-block;
-	margin-left: 0.5em;
+  display: inline-block;
+  margin-left: 0.5em;
+  position: relative;
 }
-
+/* line 95, sass/style.scss */
+ul#admin_menu li ul {
+  position: absolute;
+  padding: 0.25em 0 0 0;
+}
+/* line 99, sass/style.scss */
+ul#admin_menu li ul li {
+  padding: 0;
+  margin: 0;
+}
+/* line 106, sass/style.scss */
 ul#admin_menu li:after {
-	content: '|';
-	margin-left: 0.5em;
-} 
-
+  content: '|';
+  margin-left: 0.5em;
+}
+/* line 111, sass/style.scss */
 ul#admin_menu li:last-child:after {
-	content: '';
-	margin-left: 0;
+  content: '';
+  margin-left: 0;
 }
 
-#wdv-logo {
-    border-bottom: 1px solid #CCC;
-    text-align: right;
-    padding: 0.5em 0;
+/* line 117, sass/style.scss */
+#logo {
+  border-bottom: 1px solid #CCC;
+  text-align: right;
+  padding: 0.5em 0;
+}
+/* line 122, sass/style.scss */
+#logo a {
+  font-size: 3em;
+  font-weight: bold;
+  color: #666;
+  background: -webkit-linear-gradient(#eee, #666);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* line 131, sass/style.scss */
+#logo span {
+  display: block;
+  color: #999;
 }
 
-#wdv-logo a {
-    font-size: 3em;
-    font-weight: bold;
-    color: #666;
-     background: -webkit-linear-gradient(#eee, #666);
-  	-webkit-background-clip: text;
-  	-webkit-text-fill-color: transparent;
-}
-
-#wdv-logo span {
-	display: block;
-	color: #999;
-}
-
-
+/* line 138, sass/style.scss */
 .wdv-form label {
-	display: block;
-	font-size: 1.25em;
-    margin-bottom: 0.3em;
-    margin-top: 0.5em;
+  display: block;
+  font-size: 1.25em;
+  margin-bottom: 0.3em;
+  margin-top: 0.5em;
 }
-
-.wdv-form input,
+/* line 145, sass/style.scss */
+.wdv-form .input,
 .wdv-form textarea {
-    border: 1px #CCCCCC solid;
-    font-size: 1.25em;
-    padding: 0.5em;
-    width: 33%;
+  border: 1px #CCCCCC solid;
+  font-size: 1.25em;
+  padding: 0.5em;
+  width: 33%;
 }
-
-
+/* line 153, sass/style.scss */
 .wdv-form button {
-	padding: 0.5em;
-    font-size: 1.25em;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    color: #666;
-    background-color: #ddd;
-    border: 1px solid #ccc;
+  padding: 0.5em;
+  font-size: 1.25em;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  color: #666;
+  background-color: #ddd;
+  border: 1px solid #ccc;
 }
-
+/* line 164, sass/style.scss */
 .wdv-form button:hover {
-	cursor: pointer;
-	background-color: #ccc;
+  cursor: pointer;
+  background-color: #ccc;
 }
 
+/* line 170, sass/style.scss */
 .wdv-form-buttons {
-    width: 33%;
-    text-align: right;
-    padding: 20px;
+  width: 33%;
+  text-align: right;
+  padding: 20px;
 }
 
+/* line 176, sass/style.scss */
 .wdv-box-center {
-	width: 50%;
-	margin: 0 auto;
+  width: 50%;
+  margin: 0 auto;
 }

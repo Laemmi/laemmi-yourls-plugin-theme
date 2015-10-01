@@ -1,0 +1,179 @@
+/*
+ * Permission is hereby granted, free of charge, to any person obtaining a
+ * copy of this software and associated documentation files (the "Software"),
+ * to deal in the Software without restriction, including without limitation
+ * the rights to use, copy, modify, merge, publish, distribute, sublicense,
+ * and/or sell copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+ * IN THE SOFTWARE.
+ *
+ * @category  yourls-laemmi-theme
+ * @package   style.scss
+ * @author    Michael Lämmlein <ml@spacerabbit.de>
+ * @copyright ©2015 laemmi
+ * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
+ * @version   1.0
+ * @since     12.06.15
+*/
+body {
+  background-color: #d6d9dc;
+  font-size: 14px;
+}
+
+div, p, td {
+  font-family: Verdana, Arial;
+  font-size: 1em;
+}
+
+h1 {
+  height: auto;
+  margin: 0;
+  float: none;
+  max-width: 0;
+}
+
+ul li {
+  margin-bottom: 3px;
+}
+
+#wrap {
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+#footer {
+  margin: 5px auto 0 auto;
+  max-width: 950px;
+  background: white;
+  padding: 5px 20px;
+
+  p {
+    text-align: right;
+    padding: 0;
+    background: white;
+    margin: 0;
+    max-width: 950px;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    border: none;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    a {
+      background: transparent;
+      color: #666;
+    }
+  }
+}
+
+ul#admin_menu {
+  text-align: right;
+  min-height: 0;
+
+  li {
+    display: inline-block;
+    margin-left: 0.5em;
+    position: relative;
+
+    ul {
+      position: absolute;
+      padding: 0.25em 0 0 0;
+
+      li {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+
+  li:after {
+    content: '|';
+    margin-left: 0.5em;
+  }
+
+  li:last-child:after {
+    content: '';
+    margin-left: 0;
+  }
+}
+
+#logo {
+  border-bottom: 1px solid #CCC;
+  text-align: right;
+  padding: 0.5em 0;
+
+  a {
+    font-size: 3em;
+    font-weight: bold;
+    color: #666;
+    background: -webkit-linear-gradient(#eee, #666);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  span {
+    display: block;
+    color: #999;
+  }
+}
+
+.wdv-form {
+  label {
+    display: block;
+    font-size: 1.25em;
+    margin-bottom: 0.3em;
+    margin-top: 0.5em;
+  }
+
+  .input,
+  textarea {
+    border: 1px #CCCCCC solid;
+    font-size: 1.25em;
+    padding: 0.5em;
+    width: 33%;
+  }
+
+  button {
+    padding: 0.5em;
+    font-size: 1.25em;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    color: #666;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: #ccc;
+  }
+}
+
+.wdv-form-buttons {
+  width: 33%;
+  text-align: right;
+  padding: 20px;
+}
+
+.wdv-box-center {
+  width: 50%;
+  margin: 0 auto;
+}

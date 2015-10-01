@@ -39,6 +39,9 @@ class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
      */
     protected $plugin_path = '';
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->plugin_path = YOURLS_PLUGINDIR . '/laemmi-yourls-plugin-theme';
@@ -58,7 +61,7 @@ class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
     public function html_logo()
     {
         ob_end_clean();
-        echo '<div id="wdv-logo">
+        echo '<div id="logo">
         <a href="/" title="' . LAEMMI_THEME_PAGE_NAME . '">' . LAEMMI_THEME_PAGE_NAME . '</a>
         <span>' . LAEMMI_THEME_PAGE_SUBNAME . '</span>
         </div>';
