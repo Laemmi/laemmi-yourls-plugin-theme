@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: laemmi´s theme
-Plugin URI: https://github.com/Laemmi/yourls-plugin-laemmi-theme
+Plugin URI: https://github.com/Laemmi/laemmi-yourls-plugin-theme
 Description: Nice theme
 Version: 1.0
 Author: Michael Lämmlein
@@ -27,7 +27,7 @@ Copyright 2015 laemmi
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  *
- * @category  laemmi-theme-yourls
+ * @category  laemmi-yourls-plugin-theme
  * @package   plugin.php
  * @author    Michael Lämmlein <ml@spacerabbit.de>
  * @copyright ©2015 laemmi
@@ -39,7 +39,12 @@ Copyright 2015 laemmi
 // No direct call
 if(!defined('YOURLS_ABSPATH'))die();
 
-require_once 'classes/yourls_plugin_laemmi_theme.php';
-require_once 'classes/yourls_plugin_laemmi_theme_plugin.php';
-
-new yourls_plugin_laemmi_theme_plugin(new yourls_plugin_laemmi_theme());
+if (!yourls_is_API()) {
+    // Check if AbstractDefault class exists
+    if(class_exists('Laemmi\Yourls\Plugin\AbstractDefault')) {
+        require_once 'lib/Plugin.php';
+        new Laemmi\Yourls\Plugin\Theme\Plugin();
+    } else {
+        echo 'Please install "laemmi-yourls-default-tools" first!';
+    }
+}

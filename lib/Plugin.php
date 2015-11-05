@@ -18,8 +18,8 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  *
- * @category  laemmi-theme-yourls
- * @package   classes/yourls_plugin_laemmi_theme.php
+ * @category  laemmi-yourls-plugin-theme
+ * @package   Plugin.php
  * @author    Michael Lämmlein <ml@spacerabbit.de>
  * @copyright ©2015 laemmi
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
@@ -27,30 +27,34 @@
  * @since     12.06.15
 */
 
-require_once 'yourls_plugin_laemmi_theme_interface.php';
+/**
+ * Namespace
+ */
+namespace Laemmi\Yourls\Plugin\Theme;
 
 /**
- * Class yourls_plugin_laemmi_theme
+ * Use
  */
-class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
+use Laemmi\Yourls\Plugin\AbstractDefault;
+
+/**
+ * Class Plugin
+ *
+ * @package Laemmi\Yourls\Plugin\Theme
+ */
+class Plugin extends AbstractDefault
 {
     /**
-     * Define path to plugin
+     * Namespace
      */
-    protected $plugin_path = '';
+    const APP_NAMESPACE = 'laemmi-yourls-plugin-theme';
 
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->plugin_path = YOURLS_PLUGINDIR . '/laemmi-yourls-plugin-theme';
-    }
+    ####################################################################################################################
 
     /**
      * Action: pre_html_logo
      */
-    public function pre_html_logo()
+    public function action_pre_html_logo()
     {
         ob_start();
     }
@@ -58,7 +62,7 @@ class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
     /**
      * Action: html_logo
      */
-    public function html_logo()
+    public function action_html_logo()
     {
         ob_end_clean();
         echo '<div id="logo">
@@ -70,10 +74,12 @@ class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
     /**
      * Action: html_head
      */
-    public function html_head()
+    public function action_html_head()
     {
-        echo '<style>' . file_get_contents($this->plugin_path . '/style.css') . '</style>';
+        echo $this->getCssStyle();
     }
+
+    ####################################################################################################################
 
     /**
      * Filter: html_footer_text
@@ -81,9 +87,11 @@ class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
      * @param $value
      * @return mixed
      */
-    public function html_footer_text($value)
+    public function filter_html_footer_text($value)
     {
-        return include($this->plugin_path . '/html_footer_text.php');
+        $file = YOURLS_PLUGINDIR . '/' . self::APP_NAMESPACE . '/html_footer_text.php';
+
+        return include($file);
     }
 
     /**
@@ -93,7 +101,7 @@ class yourls_plugin_laemmi_theme implements yourls_plugin_laemmi_theme_interface
      * @param $context
      * @return string
      */
-    public function html_title($title, $context)
+    public function filter_html_title($title, $context)
     {
         $title = trim(substr($title, 0, strpos($title, '&laquo;')));
         return $title . ' | ' . LAEMMI_THEME_PAGE_NAME;
