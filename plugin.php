@@ -4,7 +4,7 @@ Plugin Name: laemmi´s theme
 Plugin URI: https://github.com/Laemmi/laemmi-yourls-plugin-theme
 Description: Nice theme
 Version: 1.0
-Author: Michael Lämmlein
+Author: laemmi
 Author URI: https://github.com/Laemmi
 Copyright 2015 laemmi
 */
