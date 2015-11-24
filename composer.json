@@ -13,6 +13,6 @@
   }],
 
   "require": {
-    "laemmi/composer-installer": "^1.0"
+    "laemmi/laemmi-yourls-default-tools": "^1.0"
   }
 }
