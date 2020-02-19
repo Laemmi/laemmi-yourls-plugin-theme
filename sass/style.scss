@@ -17,54 +17,124 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
  * IN THE SOFTWARE.
  *
- * @category  yourls-laemmi-theme
- * @package   style.scss
- * @author    Michael Lämmlein <ml@spacerabbit.de>
- * @copyright ©2015 laemmi
+ * @category  laemmi-yourls-plugin-theme
+ * @author    Michael Lämmlein <laemmi@spacerabbit.de>
+ * @copyright ©2016 laemmi
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
  * @version   1.0
- * @since     12.06.15
+ * @since     18.01.16
 */
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
-  background-color: #d6d9dc;
-  font-size: 14px;
+  margin-bottom: 60px;
+  background-color: #ededed;
+  padding: 0;
 }
 
-div, p, td {
-  font-family: Verdana, Arial;
-  font-size: 1em;
-}
+header {
+  height: 50px;
 
-h1 {
-  height: auto;
-  margin: 0;
-  float: none;
-  max-width: 0;
-}
+  background-image: linear-gradient(#ec923a, #e35d1f);
+  box-shadow: 0 3px 3px #ccc;
 
-ul li {
-  margin-bottom: 3px;
-}
+  nav.navbar {
+    border: none;
+    .navbar-header {
+      .navbar-brand {
+        position: relative;
+        width: 122px;
+        margin-left: 0px;
+        margin-top: 1px;
+        background: url(assets/img/logo-yourls.png) left center no-repeat;
+        background-size: auto 26px;
 
-#wrap {
-  border: none;
-  -moz-border-radius: 0;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+        span {
+          display: inline-block;
+          font-size: 80%;
+          margin-left: 5px;
+          text-shadow: none;
+          color: white;
+        }
+
+        > span {
+          position: absolute;
+          left: 122px;
+          top: 8px;
+          display: block;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    ul.nav {
+      > li {
+        > a {
+          color: white;
+          font-weight: normal;
+          text-shadow: none;
+        }
+        > a:hover {
+          background-color: rgba(0,0,0,0.3);
+        }
+        > a:focus {
+          background-color: rgba(255,255,255,0.3);
+        }
+      }
+      > li.spacer {
+        height: 5px;
+        margin-right: 30px;
+      }
+    }
+
+    .dropdown-special > a {
+      padding-right: 30px;
+    }
+
+    .dropdown-special:hover > a {
+      background-color: rgba(0,0,0,0.3);
+    }
+
+    .dropdown-special:hover .dropdown-caret {
+      background-color: rgba(0,0,0,0.3);
+    }
+
+    li.dropdown {
+      position: relative;
+    }
+
+    .dropdown-caret {
+      color: #FFF;
+      position: absolute;
+      padding: 4px 6px 4px 4px;
+      top: 12px;
+      right: 8px;
+    }
+
+    .dropdown-special:hover .dropdown-caret:hover {
+      background-color: rgba(0,0,0,0.5);
+      cursor: pointer;
+    }
+  }
 }
 
 #footer {
-  margin: 5px auto 0 auto;
-  max-width: 950px;
-  background: white;
-  padding: 5px 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
 
   p {
-    text-align: right;
-    padding: 0;
-    background: white;
     margin: 0;
-    max-width: 950px;
+    padding: 0;
+    text-align: right;
+    background: transparent;
+    max-width: 100%;
     -moz-border-radius: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
@@ -76,65 +146,83 @@ ul li {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 
-    a {
-      background: transparent;
-      color: #666;
+    //a {
+    //  background: transparent;
+    //  color: #666;
+    //}
+  }
+
+  .nav {
+    margin-top: 12px;
+    text-align: right;
+
+    li {
+      display: inline-block;
+      float: none;
     }
   }
 }
 
-ul#admin_menu {
-  text-align: right;
-  min-height: 0;
+#wrap {
+  border: none;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
 
-  li {
-    display: inline-block;
-    margin-left: 0.5em;
-    position: relative;
-
-    ul {
-      position: absolute;
-      padding: 0.25em 0 0 0;
-
-      li {
-        padding: 0;
-        margin: 0;
-      }
-    }
+  h2 {
+    font-size: 18px;
+    padding: 0;
+    margin: 10px 0;
   }
 
-  li:after {
-    content: '|';
-    margin-left: 0.5em;
-  }
-
-  li:last-child:after {
-    content: '';
-    margin-left: 0;
+  h3 {
+    font-size: 16px;
   }
 }
 
-#logo {
-  border-bottom: 1px solid #CCC;
-  text-align: right;
-  padding: 0.5em 0;
+div, p, td {
+  font-family: inherit;
+  font-size: inherit;
+}
 
-  a {
-    font-size: 3em;
-    font-weight: bold;
-    color: #666;
-    background: -webkit-linear-gradient(#eee, #666);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  span {
-    display: block;
-    color: #999;
+body.login {
+  #wrap {
+    background: transparent;
   }
 }
 
-.wdv-form {
+#login-container {
+  background: #fff;
+  padding: 20px;
+  margin: 125px auto 0 auto;
+  max-width: 500px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px #DDD;
+
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    padding: 0 0 10px 0;
+    margin: 0 0 20px 0;
+  }
+
+  form label {
+    font-weight: normal;
+  }
+}
+
+#shareboxes {
+  line-height: normal;
+  small {
+    font-size: 10px;
+
+  }
+}
+
+.laemmi-form {
   label {
     display: block;
     font-size: 1.25em;
@@ -167,13 +255,13 @@ ul#admin_menu {
   }
 }
 
-.wdv-form-buttons {
+.laemmi-form-buttons {
   width: 33%;
   text-align: right;
   padding: 20px;
 }
 
-.wdv-box-center {
+.laemmi-box-center {
   width: 50%;
   margin: 0 auto;
 }

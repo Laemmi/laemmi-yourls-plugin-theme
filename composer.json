@@ -1,18 +1,23 @@
 {
   "name": "laemmi/laemmi-yourls-plugin-theme",
   "type": "yourls-plugin",
-  "description": "Plugin for YOURLS. Admin list design.",
-  "keywords": ["yourls","plugin","comment","labels"],
+  "description": "Plugin for YOURLS. Nice Theme.",
+  "keywords": ["yourls","plugin","theme"],
   "homepage": "https://github.com/laemmi/laemmi-yourls-plugin-theme",
   "license": "MIT",
   "authors": [{
     "name": "Michael Lämmlein",
     "email": "laemmi@spacerabbit.de",
-    "homepage": "http://www.spacerabbit.de",
+    "homepage": "https://www.spacerabbit.de",
     "role": "Developer"
   }],
 
   "require": {
     "laemmi/laemmi-yourls-default-tools": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Laemmi\\Yourls\\Plugin\\Theme\\": "src"
+    }
   }
 }

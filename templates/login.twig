@@ -1,0 +1,35 @@
+<div id="login-container">
+    <h2>{{ yourls__('Login') }}</h2>
+
+    {% if error %}<div class="alert alert-danger" role="alert">{{ error }}</div>{% endif %}
+
+    <form method="post" action="{{ action }}" class="form-horizontal">
+        <div class="form-group">
+            <label for="username" class="col-sm-3 control-label">{{ yourls__('Username') }}</label>
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="username" name="username" placeholder="{{ yourls__('Username') }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">{{ yourls__('Password') }}</label>
+            <div class="col-sm-9">
+                <input type="password" class="form-control" id="password" name="password" placeholder="{{ yourls__('Password') }}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" id="submit" class="btn btn-default">{{ yourls__('Login') }}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+</div>
+<div id="footer">
+    {% include 'footer_text.twig' %}
+</div>
+{% if debug %}<pre>{{ debug }}</pre>{% endif %}

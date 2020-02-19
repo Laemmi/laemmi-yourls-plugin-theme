@@ -1,0 +1,7 @@
+<div class="container">
+    <ul class="nav nav-pills">
+    {% for key, val in links %}
+        <li><a href="{{ key }}" title="{{ val }}">{{ val }}</a></li>
+    {% endfor %}
+    </ul>
+</div>

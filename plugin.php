@@ -1,13 +1,15 @@
 <?php
+
 /*
 Plugin Name: laemmi´s theme
 Plugin URI: https://github.com/Laemmi/laemmi-yourls-plugin-theme
 Description: Nice theme
-Version: 1.0
+Version: 1.0.1
 Author: laemmi
 Author URI: https://github.com/Laemmi
 Copyright 2015 laemmi
 */
+
 /*
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -29,23 +31,24 @@ Copyright 2015 laemmi
  *
  * @category  laemmi-yourls-plugin-theme
  * @package   plugin.php
- * @author    Michael Lämmlein <ml@spacerabbit.de>
+ * @author    Michael Lämmlein <laemmi@spacerabbit.de>
  * @copyright ©2015 laemmi
  * @license   http://www.opensource.org/licenses/mit-license.php MIT-License
  * @version   1.0
  * @since     12.06.15
 */
 
+use Laemmi\Yourls\Plugin\Theme\Plugin;
+
 // No direct call
-if(!defined('YOURLS_ABSPATH'))die();
+if (!defined('YOURLS_ABSPATH'))die();
 
 if (!yourls_is_API()) {
     // Check if AbstractDefault class exists
-    if(class_exists('Laemmi\Yourls\Plugin\AbstractDefault')) {
-        require_once 'lib/Plugin.php';
-        new Laemmi\Yourls\Plugin\Theme\Plugin();
+    if (class_exists('Laemmi\Yourls\Plugin\AbstractDefault')) {
+        new Plugin();
     } else {
-        if('activate' === (isset($_GET['action']) ? $_GET['action'] : null) && 'laemmi-yourls-plugin-theme' === $_GET['plugin']) {
+        if ('activate' === (isset($_GET['action']) ? $_GET['action'] : null) && 'laemmi-yourls-plugin-theme' === $_GET['plugin']) {
             echo 'Please install "laemmi-yourls-default-tools" first!';
         }
     }
